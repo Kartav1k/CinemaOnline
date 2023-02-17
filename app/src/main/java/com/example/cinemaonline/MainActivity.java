@@ -104,4 +104,20 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "Debug");
         Log.v(TAG, "Detail");
     }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        setContentView(R.layout.activity_main);
+        Context info = getApplicationContext();
+        CharSequence message = "Destroy activity";
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(info, message, duration);
+        toast.show();
+        Log.e(TAG,"Fail");
+        Log.w(TAG, "Warning");
+        Log.i(TAG, "Information");
+        Log.d(TAG, "Debug");
+        Log.v(TAG, "Detail");
+    }
 }
