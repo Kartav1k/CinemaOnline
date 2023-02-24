@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CinemaOnline</string>
+    <string name="Authorization" color="black" aligh="center">Авторизация</string>>
 </resources>
