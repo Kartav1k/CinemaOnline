@@ -54,10 +54,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
+        android:id="@+id/imageLogo"
         android:layout_width="210dp"
         android:layout_height="150dp"
         android:layout_marginTop="68dp"
-        android:src="@drawable/logo1"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

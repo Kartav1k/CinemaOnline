@@ -3,6 +3,8 @@ package com.example.cinemaonline;
 import androidx.appcompat.app.AppCompatActivity;
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 import androidx.constraintlayout.widget.ConstraintLayout;
+
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.Context;
 import android.util.Log;
@@ -17,12 +19,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ConstraintLayout constraintLayout = new ConstraintLayout(this);
-        TextView textView = new TextView(this);
+        TextView textView=(TextView) findViewById(R.id.textView);
         textView.setText("Авторизация");
-        textView.setTextSize(32);
-
-        setContentView(constraintLayout);
+        ImageView imageView=findViewById(R.id.imageLogo);
+        imageView.setImageResource(R.drawable.logo1);
         Context info = getApplicationContext();
         CharSequence message = "Created";
         int duration = Toast.LENGTH_SHORT   ;
