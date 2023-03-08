@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="20dp">
+    android:paddingLeft="@dimen/horizontal_indent"
+    android:paddingRight="@dimen/horizontal_indent"
+    android:paddingTop="@dimen/vertical_indent">
 
     <ImageView
         android:id="@+id/imageLogo"
@@ -14,10 +14,12 @@
         android:gravity="center" />
 
     <TextView
-        android:layout_width="395dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageLogo"
-        android:layout_marginTop="5dp"
+        android:layout_alignEnd="@+id/imageLogo"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="31dp"
         android:gravity="center"
         android:text="Установка имени профиля"
         android:textColor="@color/black"

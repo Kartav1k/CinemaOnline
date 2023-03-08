@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.Context;
@@ -23,16 +25,17 @@ public class MainActivity extends AppCompatActivity {
         textView.setText("Авторизация");
         ImageView imageView=findViewById(R.id.imageLogo);
         imageView.setImageResource(R.drawable.logo1);
+        Button button=findViewById(R.id.button);
+        button.setText("Войти");
+        EditText edit1 =findViewById(R.id.editLogin);
+        edit1.setText("Логин");
+        EditText edit2 =findViewById(R.id.editPassword);
+        edit2.setText("Пароль");
         Context info = getApplicationContext();
         CharSequence message = "Created";
         int duration = Toast.LENGTH_SHORT   ;
         Toast toast = Toast.makeText(info, message, duration);
         toast.show();
-        Log.e(TAG, "Fail");
-        Log.w(TAG, "Warning");
-        Log.i(TAG, "Information");
-        Log.d(TAG, "Debug");
-        Log.v(TAG, "Detail");
     }
 
     @Override
@@ -44,11 +47,6 @@ public class MainActivity extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(info, message, duration);
         toast.show();
-        Log.e(TAG,"Fail");
-        Log.w(TAG, "Warning");
-        Log.i(TAG, "Information");
-        Log.d(TAG, "Debug");
-        Log.v(TAG, "Detail");
     }
 
     @Override
@@ -60,11 +58,6 @@ public class MainActivity extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(info, message, duration);
         toast.show();
-        Log.e(TAG,"Fail");
-        Log.w(TAG, "Warning");
-        Log.i(TAG, "Information");
-        Log.d(TAG, "Debug");
-        Log.v(TAG, "Detail");
     }
 
     @Override
@@ -76,11 +69,6 @@ public class MainActivity extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(info, message, duration);
         toast.show();
-        Log.e(TAG,"Fail");
-        Log.w(TAG, "Warning");
-        Log.i(TAG, "Information");
-        Log.d(TAG, "Debug");
-        Log.v(TAG, "Detail");
     }
 
     @Override
@@ -92,11 +80,6 @@ public class MainActivity extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(info, message, duration);
         toast.show();
-        Log.e(TAG,"Fail");
-        Log.w(TAG, "Warning");
-        Log.i(TAG, "Information");
-        Log.d(TAG, "Debug");
-        Log.v(TAG, "Detail");
     }
 
     @Override
@@ -108,11 +91,6 @@ public class MainActivity extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(info, message, duration);
         toast.show();
-        Log.e(TAG,"Fail");
-        Log.w(TAG, "Warning");
-        Log.i(TAG, "Information");
-        Log.d(TAG, "Debug");
-        Log.v(TAG, "Detail");
     }
 
     @Override
@@ -124,10 +102,6 @@ public class MainActivity extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(info, message, duration);
         toast.show();
-        Log.e(TAG,"Fail");
-        Log.w(TAG, "Warning");
-        Log.i(TAG, "Information");
-        Log.d(TAG, "Debug");
-        Log.v(TAG, "Detail");
     }
+
 }
