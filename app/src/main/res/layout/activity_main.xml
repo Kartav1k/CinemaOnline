@@ -27,6 +27,7 @@
         android:layout_height="24dp"
         android:textColor="@color/black"
         android:textSize="16dp"
+        android:text=""
         android:gravity="center"
         android:layout_gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,9 +39,11 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="436dp"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="440dp"
+        android:backgroundTint="@color/biruz"
+        android:onClick="authorization"
         android:text="Войти"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"

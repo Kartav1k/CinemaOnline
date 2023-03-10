@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">CinemaOnline</string>
     <string name="Authorization" aligh="center" color="black">Авторизация</string>>
-    <string name="Moscow" >Москва</string>
-    <string name="Piter" >Санкт-Петербург</string>
-    <string name="Ekat" >Екатеринбург</string>
-    <string name="Krasnodar" >Краснодар</string>
-    <string name="Novosib" >Новосибирск</string>
+    <string name="Moscow">Москва</string>
+    <string name="Piter">Санкт-Петербург</string>
+    <string name="Ekat">Екатеринбург</string>
+    <string name="Krasnodar">Краснодар</string>
+    <string name="Novosib">Новосибирск</string>
     <string name="vvod" color="black">Введите ваш город</string>
 </resources>
