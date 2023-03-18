@@ -6,7 +6,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
@@ -24,10 +24,10 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "CinemaOnline";
-    TextView butOut;
+    //TextView butOut;
     static final String message ="Exit";
 
-    ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+    /*ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
         @Override
         public void onActivityResult(ActivityResult result) {
             butOut = findViewById(R.id.butOut);
@@ -37,11 +37,18 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-    });
-
+    });*/
+    public MainActivity(){
+        super(R.layout.fragment_main_login);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+    }
+
+        /*
         setContentView(R.layout.activity_main);
         TextView textView = findViewById(R.id.textView);
         textView.setText("Авторизация");
@@ -54,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
         edit1.setText("");
         EditText edit2 = findViewById(R.id.editPassword);
         edit2.setText("");
+
+
         Context info = getApplicationContext();
         CharSequence message = "Created";
         int duration = Toast.LENGTH_SHORT;
@@ -64,16 +73,17 @@ public class MainActivity extends AppCompatActivity {
             String login = arguments.get("backLogin").toString();
             edit1.setText(login);
         }
-    }
+    }*/
 
     public void authorization(View view) {
         Log.d(TAG,"Сработало нажатие");
-        EditText edit1 = findViewById(R.id.editLogin);
+        /*EditText edit1 = findViewById(R.id.editLogin);
         String login = edit1.getText().toString();
         Intent intent = new Intent(this, dataIn.class);
         intent.putExtra("editLogin", login);
-        mStartForResult.launch(intent);
+        mStartForResult.launch(intent);*/
     }
+
 
     @Override
     protected void onStart() {
