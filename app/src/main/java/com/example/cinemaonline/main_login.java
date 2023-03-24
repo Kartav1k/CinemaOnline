@@ -6,6 +6,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentResultListener;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,8 +37,7 @@ public class main_login extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView");
         Toast.makeText(getContext(),"onCreateView",Toast.LENGTH_SHORT).show();
         return inflater.inflate(R.layout.fragment_main_login, container, false);
@@ -44,25 +45,27 @@ public class main_login extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        Log.d(TAG, "onViewCreated");
+        Toast.makeText(getContext(),"onViewCreated",Toast.LENGTH_SHORT).show();
         ImageView imageView=view.findViewById(R.id.imageLogo);
         Button button = view.findViewById(R.id.button);
-        TextView updateBox = view.findViewById(R.id.textView);
+        TextView textView = view.findViewById(R.id.textView);
+        textView.setText("Авторизация");
         EditText editText1 = view.findViewById(R.id.editPassword);
         EditText editText2 = view.findViewById(R.id.editLogin);
         imageView.setImageResource(R.drawable.logo1);
-        editText1.setText("Пароль");
-        editText2.setText("Логин");
         button.setText("Войти");
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                String curDate = new Date().toString();
-                updateBox.setText(curDate);
+            public void onClick(View view) {
+                Bundle result = new Bundle();
+                result.putString("name", editText2.getText().toString());
+                Log.d(TAG, "Кнопка нажата");
+                getParentFragmentManager().setFragmentResult("toSecond", result);
+
             }
         });
-        Log.d(TAG, "onViewCreated");
-        Toast.makeText(getContext(),"ViewStateRestored",Toast.LENGTH_SHORT).show();
     }
 
     @Override

@@ -26,7 +26,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="440dp"
         android:backgroundTint="@color/biruz"
-        android:onClick="authorization"
+        android:onClick="onClick"
         android:text="Войти"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"

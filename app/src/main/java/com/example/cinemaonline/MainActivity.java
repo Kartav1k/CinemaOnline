@@ -38,9 +38,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     });*/
-    public MainActivity(){
-        super(R.layout.fragment_main_login);
-    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,16 +73,16 @@ public class MainActivity extends AppCompatActivity {
         }
     }*/
 
-    public void authorization(View view) {
-        Log.d(TAG,"Сработало нажатие");
+    //public void authorization(View view) {
+        //Log.d(TAG,"Сработало нажатие");
         /*EditText edit1 = findViewById(R.id.editLogin);
         String login = edit1.getText().toString();
-        Intent intent = new Intent(this, dataIn.class);
+        Intent intent = new Intent(this, datatest.class);
         intent.putExtra("editLogin", login);
         mStartForResult.launch(intent);*/
-    }
+    //}
 
-
+    /*
     @Override
     protected void onStart() {
         super.onStart();
@@ -143,5 +141,5 @@ public class MainActivity extends AppCompatActivity {
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(info, message, duration);
         toast.show();
-    }
+    }*/
 }

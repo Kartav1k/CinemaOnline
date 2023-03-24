@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".dataIn">
+    tools:context=".datatest">
 
     <TextView
         android:id="@+id/hello"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="49dp"
+        android:layout_height="24dp"
         android:layout_gravity="center"
         android:gravity="center"
+        android:text="тест"
         android:textColor="@color/black"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
