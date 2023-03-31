@@ -1,9 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.fragment.app.FragmentContainerView
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/secondFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:name="com.example.cinemaonline.datatestF"
-    tools:layout="@layout/fragment_data" />
+    android:paddingLeft="@dimen/horizontal_indent"
+    android:paddingRight="@dimen/horizontal_indent"
+    android:paddingTop="@dimen/vertical_indent">
+
+    <ImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="395dp"
+        android:layout_height="181dp"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageLogo"
+        android:layout_alignEnd="@+id/imageLogo"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="31dp"
+        android:gravity="center"
+        android:text="Установка имени профиля"
+        android:textColor="@color/black"
+        android:textSize="24dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageLogo"
+        android:layout_alignEnd="@+id/imageLogo"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="123dp"
+        android:gravity="center"
+        android:hint="Вводить здесь"
+        tools:ignore="UnknownIdInLayout" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageLogo"
+        android:layout_alignEnd="@+id/imageLogo"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="136dp"
+        android:gravity="center"
+        android:text="Принять" />
+
+</RelativeLayout>

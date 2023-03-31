@@ -5,8 +5,8 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
@@ -24,8 +24,8 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "CinemaOnline";
-    //TextView butOut;
-    static final String message ="Exit";
+    TextView butOut;
+    static final String message = "Exit";
 
     /*ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
         @Override
@@ -46,8 +46,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-        /*
-        setContentView(R.layout.activity_main);
+
+
+
+        /*setContentView(R.layout.activity_main);
         TextView textView = findViewById(R.id.textView);
         textView.setText("Авторизация");
         TextView butOut = findViewById(R.id.butOut);
@@ -70,19 +72,17 @@ public class MainActivity extends AppCompatActivity {
         if (arguments!=null){
             String login = arguments.get("backLogin").toString();
             edit1.setText(login);
-        }
-    }*/
+        }*/
 
-    //public void authorization(View view) {
-        //Log.d(TAG,"Сработало нажатие");
-        /*EditText edit1 = findViewById(R.id.editLogin);
-        String login = edit1.getText().toString();
+        /*public void onClick (View view){
+            Log.d(TAG, "Сработало нажатие");
+            EditText edit1 = findViewById(R.id.editLogin);
+        /*String login = edit1.getText().toString();
         Intent intent = new Intent(this, datatest.class);
         intent.putExtra("editLogin", login);
-        mStartForResult.launch(intent);*/
-    //}
+        mStartForResult.launch(intent);
+        }
 
-    /*
     @Override
     protected void onStart() {
         super.onStart();

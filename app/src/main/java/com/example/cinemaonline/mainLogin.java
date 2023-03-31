@@ -1,12 +1,12 @@
 package com.example.cinemaonline;
 
-import android.content.Context;
+import static android.content.ContentValues.TAG;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentResultListener;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,28 +18,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Date;
+public class mainLogin extends Fragment {
 
-
-public class main_login extends Fragment {
-
-    private final static String TAG = "Fragmant_login";
-
-    public main_login(){
-        Log.d(TAG, "Constructor");
-    }
+    private static final String TAG = "CinemaOnline";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(TAG, "onCreate");
-        Toast.makeText(getContext(),"onCreate",Toast.LENGTH_SHORT).show();
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Log.d(TAG, "onCreateView");
-        Toast.makeText(getContext(),"onCreateView",Toast.LENGTH_SHORT).show();
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_main_login, container, false);
     }
     @Override
@@ -59,11 +49,18 @@ public class main_login extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle result = new Bundle();
-                result.putString("name", editText2.getText().toString());
-                Log.d(TAG, "Кнопка нажата");
-                getParentFragmentManager().setFragmentResult("toSecond", result);
 
+                Bundle bundle= new Bundle();
+                bundle.putString("name", editText2.getText().toString());
+                Log.d(TAG, "Кнопка нажата");
+                getParentFragmentManager().setFragmentResult("requestKey",bundle);
+                Fragment fragment=new dataTestF();
+                getParentFragmentManager()
+                        .beginTransaction()
+                        .setReorderingAllowed(true)
+                        .replace(R.id.mainFragment, fragment)
+                        .commit();
+                Log.d(TAG,"Отправлено");
             }
         });
     }
@@ -116,5 +113,4 @@ public class main_login extends Fragment {
         Log.d(TAG, "onDestroy");
         Toast.makeText(getContext(),"onDestroy",Toast.LENGTH_SHORT).show();
     }
-
 }
