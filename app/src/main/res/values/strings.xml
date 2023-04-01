@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">CinemaOnline</string>
     <string name="Authorization" aligh="center" color="black">Авторизация</string>>
     <string name="Moscow">Москва</string>
@@ -7,8 +7,37 @@
     <string name="Krasnodar">Краснодар</string>
     <string name="Novosib">Новосибирск</string>
     <string name="vvod" color="black">Введите ваш город</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string-array name="Cities" tools:ignore="ExtraTranslation">
+        <item>Москва</item>
+        <item>Санкт-Петербург</item>
+        <item>Екатеринбург</item>
+        <item>Сочи</item>
+        <item>Краснодар</item>
+        <item>Белгород</item>
+        <item>Псков</item>
+        <item>Рязань</item>
+        <item>Тула</item>
+        <item>Тверь</item>
+        <item>Калуга</item>
+        <item>Новосибирск</item>
+        <item>Владивосток</item>
+        <item>Омск</item>
+    </string-array>
+    <string-array name="Movies" tools:ignore="ExtraTranslation">
+        <item>Бойцовский клуб</item>
+        <item>Бойцовский клуб 2</item>
+        <item>Крушение</item>
+        <item>Пираты карибского моря</item>
+        <item>Операция «Фортуна»: Искусство побеждать</item>
+        <item>Побег из шоушенка</item>
+        <item>Зеленая миля</item>
+        <item>Мстители</item>
+        <item>Форрест Гамп</item>
+        <item>1+1</item>
+        <item>Интерстеллар</item>
+        <item>Шрек</item>
+    </string-array>
 </resources>
