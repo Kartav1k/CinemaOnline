@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class choice_movie extends Fragment {
+
     private static String TAG="MoviesList";
 
 
@@ -49,4 +50,5 @@ public class choice_movie extends Fragment {
             }
         });
     }
+
 }
