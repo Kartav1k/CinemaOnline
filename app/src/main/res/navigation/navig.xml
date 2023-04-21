@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navig"
+    app:startDestination="@id/mainLogin">
+
+    <fragment
+        android:id="@+id/mainLogin"
+        android:name="com.example.cinemaonline.mainLogin"
+        android:label="mainLogin" >
+        <action
+            android:id="@+id/action_mainLogin_to_dataTestF2"
+            app:destination="@id/dataTestF2" />
+    </fragment>
+    <fragment
+        android:id="@+id/choice_cities"
+        android:name="com.example.cinemaonline.choice_cities"
+        android:label="fragment_choice_cities"
+        tools:layout="@layout/fragment_choice_cities" />
+    <fragment
+        android:id="@+id/choice_movie"
+        android:name="com.example.cinemaonline.choice_movie"
+        android:label="fragment_choice_movie"
+        tools:layout="@layout/fragment_choice_movie" />
+    <fragment
+        android:id="@+id/dataTestF2"
+        android:name="com.example.cinemaonline.dataTestF"
+        android:label="dataTestF" >
+        <action
+            android:id="@+id/action_dataTestF2_to_choice_cities"
+            app:destination="@id/choice_cities" />
+        <action
+            android:id="@+id/action_dataTestF2_to_choice_movie"
+            app:destination="@id/choice_movie" />
+        <argument
+            android:name="loginText"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_dataTestF2_to_mainLogin"
+            app:destination="@id/mainLogin" />
+    </fragment>
+</navigation>

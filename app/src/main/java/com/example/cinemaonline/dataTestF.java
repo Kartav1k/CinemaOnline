@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
+import androidx.navigation.Navigation;
 
 
 public class dataTestF extends Fragment {
@@ -34,28 +35,13 @@ public class dataTestF extends Fragment {
         Button backBut=view.findViewById(R.id.backBut);
         Button placeBut=view.findViewById(R.id.placeBut);
         Button movieBut=view.findViewById(R.id.movieBut);
-        getParentFragmentManager().setFragmentResultListener("requestKey", this, new FragmentResultListener() {
-            @Override
-            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
-                if (result!=null) {
-                    String res = result.getString("name");
-                    hello.setText("Здравствуйте, "+res);
-                }
-                else {
-                    Log.d(TAG,"And, it's gone");
-                }
-            }
-        });
+        hello.setText(getArguments().getString("login"));
+
         backBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d(TAG, "Кнопка нажата");
-                Fragment fragment = new mainLogin();
-                getParentFragmentManager()
-                        .beginTransaction()
-                        .setReorderingAllowed(true)
-                        .replace(R.id.dataTestF, fragment)
-                        .commit();
+                Navigation.findNavController(view).navigate(R.id.action_dataTestF2_to_mainLogin);
                 Log.d(TAG, "Вернулись в авторизацию");
             }
         });
@@ -63,24 +49,15 @@ public class dataTestF extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "Вы заходите в выбор местоположения");
-                Fragment fragment=new choice_cities();
-                getParentFragmentManager()
-                        .beginTransaction()
-                        .setReorderingAllowed(true)
-                        .replace(R.id.dataTestF, fragment)
-                        .commit();
+                Navigation.findNavController(view).navigate(R.id.action_dataTestF2_to_choice_cities);
+
             }
         });
         movieBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "Вы заходите в выбор кино");
-                Fragment fragment=new choice_movie();
-                getParentFragmentManager()
-                        .beginTransaction()
-                        .setReorderingAllowed(true)
-                        .replace(R.id.dataTestF, fragment)
-                        .commit();
+                Navigation.findNavController(view).navigate(R.id.action_dataTestF2_to_choice_movie);
             }
         });
 
