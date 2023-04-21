@@ -7,7 +7,9 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -49,12 +51,12 @@ public class mainLogin extends Fragment {
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 Log.d(TAG, "Кнопка нажата");
                 Bundle bundle= new Bundle();
                 String loginT=editText2.getText().toString();
                 bundle.putString("login", loginT);
-                Navigation.findNavController(view).navigate(R.id.action_mainLogin_to_dataTestF2,bundle);
+                Navigation.findNavController(v).navigate(R.id.action_mainLogin_to_dataTestF2,bundle);
                 Log.d(TAG,"Отправлено");
             }
         });
@@ -86,9 +88,7 @@ public class mainLogin extends Fragment {
     }
 
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-    }
+    public void onDestroyView() {super.onDestroyView();}
 
     @Override
     public void onDestroy() {
