@@ -32,7 +32,6 @@ public class MovieInfo extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         ImageView movieInfoImage = view.findViewById(R.id.pictureMovie);
         TextView movieInfoName = view.findViewById(R.id.infoMovie);
-        Button backBt = view.findViewById(R.id.movieBt);
         parseArgs();
         viewModel.movieListItemLd.observe(getViewLifecycleOwner(), new Observer<State>() {
             @Override

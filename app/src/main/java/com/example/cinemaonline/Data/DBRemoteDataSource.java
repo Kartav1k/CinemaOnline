@@ -23,7 +23,7 @@ public class DBRemoteDataSource {
         List<State> states = new ArrayList<>();
         String[] movies = context.getResources().getStringArray(R.array.Movies);
         for(int i=0;i<12;i++){
-            states.add(new State (movies[i], R.drawable.logo1));
+            states.add(new State (movies[i], R.drawable.logo_app));
         }
         MutableLiveData<List<State>> liveDataState = new MutableLiveData<>();
         liveDataState.setValue(states);
