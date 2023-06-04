@@ -1,4 +1,4 @@
-package com.example.cinemaonline;
+package com.example.cinemaonline.UI;
 
 import static android.content.ContentValues.TAG;
 
@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
@@ -21,9 +22,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.cinemaonline.R;
+import com.example.cinemaonline.UI.state_holder.MainLoginViewModel;
+
 public class mainLogin extends Fragment {
 
     private static final String TAG = "CinemaOnline";
+    private MainLoginViewModel viewModel;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,7 +43,7 @@ public class mainLogin extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Log.d(TAG, "onViewCreated");
+        viewModel = new ViewModelProvider(this).get(MainLoginViewModel.class);
         Toast.makeText(getContext(),"onViewCreated",Toast.LENGTH_SHORT).show();
         ImageView imageView=view.findViewById(R.id.imageLogo);
         Button button = view.findViewById(R.id.button);
@@ -52,12 +57,12 @@ public class mainLogin extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "Кнопка нажата");
                 Bundle bundle= new Bundle();
                 String loginT=editText2.getText().toString();
                 bundle.putString("login", loginT);
-                Navigation.findNavController(v).navigate(R.id.action_mainLogin_to_dataTestF2,bundle);
-                Log.d(TAG,"Отправлено");
+                if (viewModel.login(editText2.getText().toString())){
+                    Navigation.findNavController(v).navigate(R.id.action_mainLogin_to_dataTestF2,bundle);
+                }
             }
         });
     }
@@ -67,31 +72,4 @@ public class mainLogin extends Fragment {
         super.onViewStateRestored(savedInstanceState);
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-    }
-
-    @Override
-    public void onDestroyView() {super.onDestroyView();}
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-    }
 }

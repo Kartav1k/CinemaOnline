@@ -1,19 +1,14 @@
-package com.example.cinemaonline;
+package com.example.cinemaonline.UI;
 
-import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.PixelFormat;
-import android.os.Build;
-import android.os.CountDownTimer;
 import android.os.IBinder;
 import android.view.Gravity;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class CinemaService extends Service {
 
@@ -31,6 +26,7 @@ public class CinemaService extends Service {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             stopSelf();
+            stopService(intent);
         });
         WindowManager.LayoutParams params = new WindowManager.LayoutParams(
                 WindowManager.LayoutParams.MATCH_PARENT,

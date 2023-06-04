@@ -15,7 +15,7 @@
         android:theme="@style/Theme.CinemaOnline"
         tools:targetApi="31">
         <service
-            android:name=".CinemaService"
+            android:name=".UI.CinemaService"
             android:enabled="true"
             android:exported="true"></service>
 
@@ -24,10 +24,7 @@
             android:resource="@xml/actions" />
 
         <activity
-            android:name=".datatest"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".UI.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

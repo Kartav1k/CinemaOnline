@@ -1,4 +1,4 @@
-package com.example.cinemaonline;
+package com.example.cinemaonline.UI;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -19,6 +19,8 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
 import android.os.Bundle;
+
+import com.example.cinemaonline.R;
 
 import org.w3c.dom.Text;
 

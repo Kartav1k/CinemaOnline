@@ -1,4 +1,4 @@
-package com.example.cinemaonline;
+package com.example.cinemaonline.UI;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -12,14 +12,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentResultListener;
 import androidx.navigation.Navigation;
+
+import com.example.cinemaonline.R;
+import com.example.cinemaonline.UI.CinemaService;
 
 
 public class dataTestF extends Fragment {
@@ -39,11 +40,10 @@ public class dataTestF extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState ){
         super.onViewCreated(view, savedInstanceState);
-        TextView hello=view.findViewById(R.id.hello);
         Button backBut=view.findViewById(R.id.backBut);
+        Button movieBt=view.findViewById(R.id.movieBt);
         Button notificationBut=view.findViewById(R.id.notificationBut);
         String loginTextBundle = getArguments().getString("login");
-        hello.setText("Здравствуйте, "+ loginTextBundle);
         createNotificationChannel();
 
         backBut.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +52,13 @@ public class dataTestF extends Fragment {
                 Log.d(TAG, "Кнопка нажата");
                 Navigation.findNavController(view).navigate(R.id.action_dataTestF2_to_mainLogin);
                 Log.d(TAG, "Вернулись в авторизацию");
+            }
+        });
+        movieBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d(TAG, "Кнопка нажата");
+                Navigation.findNavController(view).navigate(R.id.action_dataTestF_to_resView);
             }
         });
         notificationBut.setOnClickListener(new View.OnClickListener() {

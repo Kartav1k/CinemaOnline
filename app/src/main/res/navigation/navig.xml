@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navig"
     app:startDestination="@id/mainLogin">
 
     <fragment
         android:id="@+id/mainLogin"
-        android:name="com.example.cinemaonline.mainLogin"
-        android:label="mainLogin" >
+        android:name="com.example.cinemaonline.UI.mainLogin"
+        android:label="mainLogin"
+        tools:layout="@layout/fragment_main_login" >
         <action
             android:id="@+id/action_mainLogin_to_dataTestF2"
             app:destination="@id/dataTestF" />
@@ -17,10 +19,32 @@
     </fragment>
     <fragment
         android:id="@+id/dataTestF"
-        android:name="com.example.cinemaonline.dataTestF"
-        android:label="dataTestF" >
+        android:name="com.example.cinemaonline.UI.dataTestF"
+        android:label="dataTestF"
+        tools:layout="@layout/fragment_data_test" >
         <action
             android:id="@+id/action_dataTestF2_to_mainLogin"
             app:destination="@id/mainLogin" />
+        <action
+            android:id="@+id/action_dataTestF_to_resView"
+            app:destination="@id/resView" />
+    </fragment>
+    <fragment
+        android:id="@+id/resView"
+        android:name="com.example.cinemaonline.UI.ResView"
+        android:label="res_view"
+        tools:layout="@layout/res_view" >
+        <action
+            android:id="@+id/action_resView_to_movieInfo"
+            app:destination="@id/movieInfo" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieInfo"
+        android:name="com.example.cinemaonline.UI.MovieInfo"
+        android:label="MovieInfo"
+        android:layout="@layout/fragment_movie_info">
+        <action
+            android:id="@+id/action_movieInfo_to_resView"
+            app:destination="@id/resView" />
     </fragment>
 </navigation>
