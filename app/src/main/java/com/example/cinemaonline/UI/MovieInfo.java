@@ -1,9 +1,7 @@
 package com.example.cinemaonline.UI;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,11 +10,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.Navigation;
 
-import com.example.cinemaonline.Data.models.State;
+import com.example.cinemaonline.Data.DataBase.Entity.State;
 import com.example.cinemaonline.R;
-import com.example.cinemaonline.UI.ResView;
 import com.example.cinemaonline.UI.state_holder.MovieInfoViewModel;
 
 public class MovieInfo extends Fragment {

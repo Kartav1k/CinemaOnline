@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.example.cinemaonline.Data.models.State;
+import com.example.cinemaonline.Data.DataBase.Entity.State;
 import com.example.cinemaonline.R;
 
 import java.util.List;

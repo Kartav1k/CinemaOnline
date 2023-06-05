@@ -11,9 +11,9 @@ import com.example.cinemaonline.Data.models.LoginPerson;
 public class MainLoginViewModel extends AndroidViewModel {
     private final MainRepository repository = new MainRepository(getApplication());
 
-    public boolean login(String login) {
+    public boolean login(String login, boolean allow) {
         LoginPerson loginPerson = new LoginPerson(login);
-        return repository.personLogin(loginPerson);
+        return repository.personLogin(loginPerson, allow);
     }
 
     public MainLoginViewModel(@NonNull Application application) {

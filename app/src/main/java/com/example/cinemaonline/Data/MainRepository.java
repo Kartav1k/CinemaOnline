@@ -5,7 +5,7 @@ import android.content.Context;
 import androidx.lifecycle.LiveData;
 
 import com.example.cinemaonline.Data.models.LoginPerson;
-import com.example.cinemaonline.Data.models.State;
+import com.example.cinemaonline.Data.DataBase.Entity.State;
 
 import java.util.List;
 
@@ -26,8 +26,8 @@ public class MainRepository implements MainProtocol {
 
 
     @Override
-    public boolean personLogin(LoginPerson loginPerson) {
-        return dataSource.LoginClass(loginPerson);
+    public boolean personLogin(LoginPerson loginPerson, boolean allow) {
+        return dataSource.LoginClass(loginPerson, allow);
     }
 
     @Override

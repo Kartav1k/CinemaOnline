@@ -7,7 +7,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.example.cinemaonline.Data.MainRepository;
-import com.example.cinemaonline.Data.models.State;
+import com.example.cinemaonline.Data.DataBase.Entity.State;
 
 public class MovieInfoViewModel extends AndroidViewModel {
 
