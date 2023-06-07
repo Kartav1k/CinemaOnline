@@ -2,6 +2,7 @@ package com.example.cinemaonline.UI;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -10,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import com.example.cinemaonline.Data.DataBase.Entity.State;
 import com.example.cinemaonline.R;
@@ -27,15 +29,25 @@ public class MovieInfo extends Fragment {
         viewModel = new ViewModelProvider(this).get(MovieInfoViewModel.class);
         super.onViewCreated(view, savedInstanceState);
         ImageView movieInfoImage = view.findViewById(R.id.pictureMovie);
-        TextView movieInfoName = view.findViewById(R.id.infoMovie);
+        TextView movieName = view.findViewById(R.id.nameMovie);
+        TextView movieInfo = view.findViewById(R.id.infoMovie);
+        ImageButton backBut = view.findViewById(R.id.backBut);
+        backBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.action_movieInfo_to_resView);
+            }
+        });
         parseArgs();
         viewModel.movieListItemLd.observe(getViewLifecycleOwner(), new Observer<State>() {
             @Override
             public void onChanged(State states) {
                 movieInfoImage.setImageResource(states.getMovieResource());
-                movieInfoName.setText(states.getName());
+                movieName.setText(states.getName());
+                movieInfo.setText(states.getMovieDes());
             }
         });
+
 
     }
 

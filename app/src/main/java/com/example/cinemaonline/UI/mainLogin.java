@@ -51,47 +51,39 @@ public class mainLogin extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         viewModel = new ViewModelProvider(this).get(MainLoginViewModel.class);
-        Toast.makeText(getContext(),"onViewCreated",Toast.LENGTH_SHORT).show();
         ImageView imageView=view.findViewById(R.id.imageLogo);
         Button button = view.findViewById(R.id.button);
+        Button regBut = view.findViewById(R.id.registrationButton);
         TextView textView = view.findViewById(R.id.textView);
         textView.setText("Авторизация");
-        EditText editText1 = view.findViewById(R.id.editPassword);
-        EditText editText2 = view.findViewById(R.id.editLogin);
+        EditText pass1 = view.findViewById(R.id.editPassword);
+        EditText login1 = view.findViewById(R.id.editLogin);
         imageView.setImageResource(R.drawable.logo1);
         button.setText("Войти");
-        //
-        SharedPreferences sharedPrefRead =
-                requireActivity().getPreferences(Context.MODE_PRIVATE);
-        String loginSP = sharedPrefRead.getString(KEY_LOGIN, "");
-        editText2.setText(loginSP);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle bundle= new Bundle();
-                String loginT=editText2.getText().toString();
-                bundle.putString(KEY_LOGIN, loginT);
-                //
-                SharedPreferences sharedPrefWrite =
-                        requireActivity().getPreferences(Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPrefWrite.edit();
-                editor.putString(KEY_LOGIN, loginT);
-                editor.apply();
-                if (viewModel.login(editText2.getText().toString(), true)){
-                    Navigation.findNavController(v).navigate(R.id.action_mainLogin_to_dataTestF2,bundle);
+                String data = login1.getText().toString();
+                Bundle bundle = new Bundle();
+                bundle.putString("login", data);
+                viewModel.login(
+                        login1.getText().toString(),
+                        pass1.getText().toString()).observe(
+                        getViewLifecycleOwner(),
+                        aBoolean -> {
+                            if (aBoolean) {
+                                Navigation.findNavController(v).navigate(R.id.action_mainLogin_to_dataTestF2, bundle);
+                            }
+                        });
                 }
+        });
+        regBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.action_mainLogin_to_registrationFrag);
             }
         });
-    }
-    private boolean allowedPermission() {
-        if (checkSelfPermission(requireContext(), android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                == PermissionChecker.PERMISSION_GRANTED) {
-            return true;
-        } else {
-            ActivityCompat.requestPermissions(requireActivity(), new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
-            return false;
-        }
     }
     @Override
     public void onViewStateRestored(@Nullable Bundle savedInstanceState) {

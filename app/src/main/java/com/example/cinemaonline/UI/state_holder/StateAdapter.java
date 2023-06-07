@@ -22,7 +22,6 @@ public class StateAdapter extends RecyclerView.Adapter<StateAdapter.ViewHolder>{
         void onStateClick(State state, int position);
     }
     public final OnStateClickListener onClickListener;
-
     private final LayoutInflater inflater;
     private final List<State> states;
 
@@ -42,6 +41,7 @@ public class StateAdapter extends RecyclerView.Adapter<StateAdapter.ViewHolder>{
         State state = states.get(position);
         holder.movieView.setImageResource(state.getMovieResource());
         holder.nameView.setText(state.getName());
+        holder.desView.setText(state.getMovieDes());
         holder.itemView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v)
@@ -56,10 +56,12 @@ public class StateAdapter extends RecyclerView.Adapter<StateAdapter.ViewHolder>{
     }
     public static class ViewHolder extends RecyclerView.ViewHolder {
         final ImageView movieView;
+        final TextView desView;
         final TextView nameView;
         ViewHolder(View view){
             super(view);
             movieView = view.findViewById(R.id.flag);
+            desView = view.findViewById(R.id.des);
             nameView = view.findViewById(R.id.txt);
         }
     }

@@ -4,6 +4,7 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 
 import com.example.cinemaonline.Data.MainRepository;
 import com.example.cinemaonline.Data.models.LoginPerson;
@@ -11,9 +12,9 @@ import com.example.cinemaonline.Data.models.LoginPerson;
 public class MainLoginViewModel extends AndroidViewModel {
     private final MainRepository repository = new MainRepository(getApplication());
 
-    public boolean login(String login, boolean allow) {
-        LoginPerson loginPerson = new LoginPerson(login);
-        return repository.personLogin(loginPerson, allow);
+
+    public LiveData<Boolean> login(String login, String pass) {
+        return repository.loginClass(login, pass);
     }
 
     public MainLoginViewModel(@NonNull Application application) {

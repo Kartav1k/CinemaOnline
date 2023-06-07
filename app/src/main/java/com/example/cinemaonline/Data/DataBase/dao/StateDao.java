@@ -15,7 +15,7 @@ import java.util.List;
 @Dao
 public interface StateDao {
     @Query("SELECT * FROM movies_table")
-    LiveData<List<State>> getCarList();
+    LiveData<List<State>> getMovieList();
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(State state);

@@ -7,9 +7,6 @@ import com.example.cinemaonline.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "CinemaOnline";
-    static final String message = "Exit";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

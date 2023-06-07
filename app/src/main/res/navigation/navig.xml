@@ -16,6 +16,9 @@
         <argument
             android:name="loginName"
             app:argType="string" />
+        <action
+            android:id="@+id/action_mainLogin_to_registrationFrag"
+            app:destination="@id/registrationFrag" />
     </fragment>
     <fragment
         android:id="@+id/dataTestF"
@@ -23,11 +26,11 @@
         android:label="dataTestF"
         tools:layout="@layout/fragment_data_test" >
         <action
-            android:id="@+id/action_dataTestF2_to_mainLogin"
-            app:destination="@id/mainLogin" />
-        <action
             android:id="@+id/action_dataTestF_to_resView"
             app:destination="@id/resView" />
+        <action
+            android:id="@+id/action_dataTestF_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/resView"
@@ -42,9 +45,66 @@
         android:id="@+id/movieInfo"
         android:name="com.example.cinemaonline.UI.MovieInfo"
         android:label="MovieInfo"
-        android:layout="@layout/fragment_movie_info">
+        tools:layout="@layout/fragment_movie_info">
         <action
             android:id="@+id/action_movieInfo_to_resView"
             app:destination="@id/resView" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFrag"
+        android:name="com.example.cinemaonline.UI.RegistrationFrag"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registrationFrag_to_mainLogin"
+            app:destination="@id/mainLogin" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.cinemaonline.UI.ProfileFragment"
+        tools:layout="@layout/fragment_profile"
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_infoAPP2"
+            app:destination="@id/infoAPP2" />
+        <action
+            android:id="@+id/action_profileFragment_to_subscriptionInfo"
+            app:destination="@id/subscriptionInfo" />
+        <action
+            android:id="@+id/action_profileFragment_to_favouritesFragment"
+            app:destination="@id/favouritesFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_dataTestF"
+            app:destination="@id/dataTestF" />
+        <action
+            android:id="@+id/action_profileFragment_to_mainLogin"
+            app:destination="@id/mainLogin" />
+    </fragment>
+    <fragment
+        android:id="@+id/favouritesFragment"
+        android:name="com.example.cinemaonline.UI.FavouritesFragment"
+        android:label="fragment_favourites"
+        tools:layout="@layout/fragment_favourites" >
+        <action
+            android:id="@+id/action_favouritesFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/subscriptionInfo"
+        android:name="com.example.cinemaonline.UI.SubscriptionInfo"
+        android:label="fragment_subscription_info"
+        tools:layout="@layout/fragment_subscription_info" >
+        <action
+            android:id="@+id/action_subscriptionInfo_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoAPP2"
+        android:name="com.example.cinemaonline.UI.InfoAPP"
+        android:label="fragment_info_a_p_p"
+        tools:layout="@layout/fragment_info_a_p_p" >
+        <action
+            android:id="@+id/action_infoAPP2_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
 </navigation>
