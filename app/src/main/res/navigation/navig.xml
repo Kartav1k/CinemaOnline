@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_dataTestF_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_dataTestF_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/resView"
@@ -66,13 +69,16 @@
         android:label="ProfileFragment" >
         <action
             android:id="@+id/action_profileFragment_to_infoAPP2"
-            app:destination="@id/infoAPP2" />
+            app:destination="@id/infoAPP2"
+            app:popUpTo="@id/profileFragment" />
         <action
             android:id="@+id/action_profileFragment_to_subscriptionInfo"
-            app:destination="@id/subscriptionInfo" />
+            app:destination="@id/subscriptionInfo"
+            app:popUpTo="@id/profileFragment" />
         <action
             android:id="@+id/action_profileFragment_to_favouritesFragment"
-            app:destination="@id/favouritesFragment" />
+            app:destination="@id/favouritesFragment"
+            app:popUpTo="@id/profileFragment" />
         <action
             android:id="@+id/action_profileFragment_to_dataTestF"
             app:destination="@id/dataTestF" />
@@ -107,4 +113,8 @@
             android:id="@+id/action_infoAPP2_to_profileFragment"
             app:destination="@id/profileFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.cinemaonline.UI.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>

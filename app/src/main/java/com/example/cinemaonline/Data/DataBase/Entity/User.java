@@ -43,24 +43,19 @@ public class User {
     public String getPhoneNum() {
         return phoneNum;
     }
-
     @NonNull
     public Integer getUid() {
         return uid;
     }
-
     public String getEmail() {
         return email;
     }
-
     public String getLogin() {
         return login;
     }
-
     public String getPass() {
         return pass;
     }
-
     public String getFullName() {
         return fullName;
     }

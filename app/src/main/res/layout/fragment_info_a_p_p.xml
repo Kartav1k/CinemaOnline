@@ -13,9 +13,9 @@
         android:id="@+id/nameInfoRazdel"
         android:layout_width="377dp"
         android:layout_height="95dp"
-        android:layout_marginTop="24dp"
-        android:text="Информация о приложении"
+        android:layout_marginTop="12dp"
         android:gravity="center"
+        android:text="Информация о приложении"
         android:textColor="#040303"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,9 +36,10 @@
         android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:text="          Данное приложение Online Cinema - это платформа, позволяющая пользователям просматривать фильмы и сериалы в удобном формате, когда и где удобно. Пользователи имеют возможность выбирать фильмы из большого каталога контента, просматривать их любых устройствах , а также покупать или арендовать билеты для онлайн просмотров."
         android:textColor="#020202"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameInfoRazdel" />
@@ -54,4 +55,16 @@
         app:layout_constraintHorizontal_bias="0.002"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/podpis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="15dp"
+        android:text="          Приложение реализовано студентом группы ИКБО-07-21 Савицким Антоном Николаевичем в ходе выполнения курсовой работы. В работе отрабатыватывались навыки создания мобильного приложения, созданнго в образовательных целях."
+        android:textColor="#020202"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
 </androidx.constraintlayout.widget.ConstraintLayout>

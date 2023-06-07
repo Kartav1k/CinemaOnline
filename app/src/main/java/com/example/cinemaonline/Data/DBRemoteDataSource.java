@@ -2,17 +2,14 @@ package com.example.cinemaonline.Data;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-
 import com.example.cinemaonline.Data.DataBase.DataBase;
 import com.example.cinemaonline.Data.DataBase.Entity.State;
 import com.example.cinemaonline.Data.DataBase.Entity.User;
 import com.example.cinemaonline.Data.DataBase.dao.StateDao;
 import com.example.cinemaonline.Data.DataBase.dao.UserDao;
 import com.example.cinemaonline.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +25,7 @@ public class DBRemoteDataSource {
         String[] movies = context.getResources().getStringArray(R.array.Movies);
         String[] moviesDes = context.getResources().getStringArray(R.array.Description);
         for(int i=0;i<10;i++){
-            states.add(new State (movies[i], R.drawable.logo_app, moviesDes[i]));
+            states.add(new State (movies[i], R.drawable.logo_app, moviesDes[i], R.raw.torreto));
         }
         MutableLiveData<List<State>> liveDataState = new MutableLiveData<>();
         liveDataState.setValue(states);
